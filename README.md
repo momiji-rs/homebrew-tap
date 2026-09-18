@@ -6,12 +6,16 @@ command-line tools.
 ## Install
 
 ```console
+$ brew trust --formula momiji-rs/tap/sasso
 $ brew install momiji-rs/tap/sasso
 $ sasso --version
 ```
 
-Use that fully qualified form: it trusts only the formula being installed, so no
-separate `brew trust` step is needed.
+`brew trust --formula` grants the narrowest trust there is: this one formula,
+not the tap, so nothing else here — now or later — becomes loadable. Installing
+by the fully qualified name records the same trust on its own, but asking for it
+first is explicit, and it is what lets you work by short name afterwards
+(`brew info sasso`, `brew upgrade sasso`).
 
 ## Formulae
 
