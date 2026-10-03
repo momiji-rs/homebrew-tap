@@ -1,25 +1,25 @@
 class Sasso < Formula
   desc "A pure-Rust SCSS to CSS compiler (a dart-sass alternative). Zero dependencies, wasm-friendly, embeddable as a library and usable as a CLI."
   homepage "https://github.com/momiji-rs/sasso"
-  version "0.20.0"
+  version "0.21.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/momiji-rs/sasso/releases/download/v0.20.0/sasso-aarch64-apple-darwin.tar.xz"
-      sha256 "396df1b91c12acd18732d8c0defa7fc61722d522f0b03d0e7b57b896c5755a1e"
+      url "https://github.com/momiji-rs/sasso/releases/download/v0.21.0/sasso-aarch64-apple-darwin.tar.xz"
+      sha256 "6e09712b862cd37ad1531d9a0c31377ab31f89d0f01ba0c273f9f3acf0fd2a2c"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/momiji-rs/sasso/releases/download/v0.20.0/sasso-x86_64-apple-darwin.tar.xz"
-      sha256 "987acb8e1f1f39ab700b75057c5a32eb4cb656ba923ffb1028001da3c934db2a"
+      url "https://github.com/momiji-rs/sasso/releases/download/v0.21.0/sasso-x86_64-apple-darwin.tar.xz"
+      sha256 "483f7471ef96900123a0069348225b84c031c1c17171daa9761a8edfa892a9b6"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/momiji-rs/sasso/releases/download/v0.20.0/sasso-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "730fb250e115443eabc6f9652157a6b456839875018be771dd5bda70115bc085"
+      url "https://github.com/momiji-rs/sasso/releases/download/v0.21.0/sasso-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "00938e7df374cfe39e6c0814aa76710d1e1af71c6394744ba447ea090b499bcf"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/momiji-rs/sasso/releases/download/v0.20.0/sasso-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "3f6a91f40e2cb8c40595daa08a294a6134f71d49918b897520a9a657f682e2e0"
+      url "https://github.com/momiji-rs/sasso/releases/download/v0.21.0/sasso-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "12b38ba3f9a54cf907a5d4315a1ad55b2dffeb96d1a169dbcf9b77f3253c3da6"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
