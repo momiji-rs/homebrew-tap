@@ -127,11 +127,13 @@ jobs:
             echo "found=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          echo "found=true" >> "$GITHUB_OUTPUT"
           # Fails, so the commit never runs, if any archive's checksum is
           # missing: a formula without one would install an unverified
-          # download, or no download on that platform.
+          # download, or no download on that platform. `found` is written only
+          # after it succeeds — the commit step's `!cancelled()` would otherwise
+          # still run and push the empty file the redirect left behind.
           sh scripts/termshot-formula.sh "$tag" /tmp/SHA256SUMS > /tmp/termshot.rb
+          echo "found=true" >> "$GITHUB_OUTPUT"
 
       - name: Commit termshot if it changed
         if: ${{ !cancelled() && steps.termshot.outputs.found == 'true' }}
